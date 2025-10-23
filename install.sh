@@ -43,7 +43,7 @@ sudo -u ace code-server --install-extension ms-toolsai.jupyter
 sudo -u ace code-server --install-extension dbcode.dbcode
 sudo -u ace code-server --install-extension brittanychiang.halcyon-vscode
 sudo -u ace code-server --install-extension pkief.material-product-icons
-sudo -u ace code-server --install-extension eamodio.gitlens
+sudo -u ace code-server --install-extension pkief.material-icon-theme
 
 # Create default Python workspace directory
 mkdir -p /home/ace/python-projects
