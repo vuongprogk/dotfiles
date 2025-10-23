@@ -49,6 +49,25 @@ sudo -u ace code-server --install-extension eamodio.gitlens
 mkdir -p /home/ace/python-projects
 chown -R ace:ace /home/ace/python-projects
 
+# Setup VS Code user settings
+SETTINGS_DIR="/home/ace/.local/share/code-server/User"
+mkdir -p "$SETTINGS_DIR"
+
+# Copy settings.json if it exists in the dotfile repo
+if [ -f "settings.json" ]; then
+    cp settings.json "$SETTINGS_DIR/settings.json"
+    echo "User settings copied to $SETTINGS_DIR/settings.json"
+fi
+
+# # Copy keybindings.json if it exists in the dotfile repo
+# if [ -f "keybindings.json" ]; then
+#     cp keybindings.json "$SETTINGS_DIR/keybindings.json"
+#     echo "Keybindings copied to $SETTINGS_DIR/keybindings.json"
+# fi
+
+# Set proper ownership
+chown -R ace:ace /home/ace/.local/share/code-server
+
 echo "Python environment setup complete!"
 python3 --version
 pip3 --version
